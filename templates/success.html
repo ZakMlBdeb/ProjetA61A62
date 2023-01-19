@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Page de résultats </title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Link to the Responsive Columns CSS -->
+        <link rel="stylesheet" type="text/css" href="../static/css/r-c-min.css" />
+
+        <!-- Link to your general styles -->
+        <link rel="stylesheet" type="text/css" href="../static/css/column-styles.css" />
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+
+    </head>
+    <body>
+    <r-c>
+        <c1-1>
+            <div align="center">
+                <p> <a href="/">Page d'acceuill</a></p>
+                <h3 >Resultat de la prédiction</h3>
+            </div>
+        </c1-1>
+    </r-c>
+    <r-c join>
+    <c1-1 sm1-3 >
+    </c1-1>
+    <c1-1 sm1-3 >
+            <div align="center">
+                <img src={{url_for('static', filename = 'images/'+ img)}}>
+            </div>
+            <div align="center">
+            <table>
+                <tr>
+                    <th>Rang</th>
+                    <th>Classe</th>
+                    <th>Probabilité</th>
+                </tr>
+                <tr>
+                    <td>1ére</td>
+                    <td>{{ predictions.class1 }}</td>
+                    <td bgcolor="#96D4D4" align="center"><strong>{{ predictions.prob1 }} %</strong></td>
+                  </tr>
+                  <tr>
+                    <td>2éme</td>
+                    <td>{{ predictions.class2 }}</td>
+                    <td bgcolor="#96D4D4" align="center">{{ predictions.prob2 }} %</td>
+                    </tr>
+                    <tr>
+                        <td>3éme</td>
+                        <td>{{ predictions.class3 }}</td>
+                        <td bgcolor="#96D4D4" align="center">{{ predictions.prob3 }} %</td>
+                      </tr>
+                    <tr>
+                        <td>4éme</td>
+                        <td>{{ predictions.class4 }}</td>
+                        <td bgcolor="#96D4D4" align="center">{{ predictions.prob4 }} %</td>
+                    </tr>
+                </table>
+            </div>
+    </c1-1>
+    <c1-1 sm1-3 >
+    </c1-1>
+</r-c>
+
+    </body>
+</html>

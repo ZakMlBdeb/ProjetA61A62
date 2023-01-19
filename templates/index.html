@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Modéle de prédiction de la maldie de Alzaheimer</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../static/css/style.css">
+        <!-- Link to the Responsive Columns CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/css/r-c-min.css" />
+
+    <!-- Link to your general styles -->
+    <link rel="stylesheet" type="text/css" href="../static/css/column-styles.css" />
+</head>
+<body class="main-content">
+<r-c>
+    <c1-1>
+        <div align="center">
+            <h3>Modéle de prédiction de la maldie d'Alzaheimer</h3>
+        </div>
+    </c1-1>
+</r-c>
+<r-c join>
+    <c1-1 sm1-3>
+    </c1-1>
+    <c1-1 sm1-3 >
+        <div align="center">
+            <form action="/success" method="post", id ="form_upload", enctype="multipart/form-data" >
+             <div class="drop-zone">
+                <span class="drop-zone__prompt">Faites glisser et déposez une image d'IRM alzheimer à traiter ou cliquez pour en télécharger une</span>
+                <input type="file" name="file" class="drop-zone__input">
+              </div>
+            <button class="button">Prédire</button>
+                <br>
+                <p color="red">{{error}}</p>
+            </form>
+        </div>
+    </c1-1>
+    <c1-1 sm1-3 >
+    </c1-1>
+</r-c>
+<r-c>
+    <c1-1>
+       <div align="center">
+           <h5>Réalisé par <br>Abderrezak Benzadi
+               et <br>
+               Hassan Gharbi</h5>
+       </div>
+    </c1-1>
+</r-c>
+<script src="../static/src/script.js"></script>
+</body>
+</html>
