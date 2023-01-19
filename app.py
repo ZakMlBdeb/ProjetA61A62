@@ -124,10 +124,7 @@ def success():
     else:
         return render_template('index.html')
 
- # return {
- #        "class": predicted_class,
- #        "confidence": float(confidence)
- #    }
+
 
 if __name__ == "__main__":
     app.run(debug = True)
