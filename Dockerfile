@@ -2,7 +2,7 @@ FROM python:3.9
 
 RUN pip install --upgrade pip
 
-RUN adduser -D myuser
+RUN adduser --disabled-login myuser
 USER myuser
 WORKDIR /home/myuser
 
