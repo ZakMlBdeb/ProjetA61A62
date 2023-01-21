@@ -7,7 +7,7 @@ USER myuser
 WORKDIR /home/myuser
 
 COPY --chown=myuser:myuser requirements.txt requirements.txt
-RUN pip install --no-cache-dir --user -r requirements.txt
+RUN pip install --user --no-cache-dir -r requirements.txt
 
 ENV PATH="/home/myuser/.local/bin:${PATH}"
 
