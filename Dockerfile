@@ -1,16 +1,15 @@
 FROM python:3.9
 
+ENV VIRTUAL_ENV=/opt/env
+
+RUN python3 -m venv $VIRTUAL_ENV
+
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
 RUN pip install --upgrade pip
 
-RUN adduser --disabled-login myuser
-USER myuser
-WORKDIR /home/myuser
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY --chown=myuser:myuser requirements.txt requirements.txt
-RUN pip install --user --no-cache-dir -r requirements.txt
-
-ENV PATH="/home/myuser/.local/bin:${PATH}"
-
-COPY --chown=myuser:myuser . .
+COPY  . .
 
 CMD ["python", "app.py"]
