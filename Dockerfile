@@ -13,4 +13,4 @@ ENV PATH="/home/myuser/.local/bin:${PATH}"
 
 COPY --chown=myuser:myuser . .
 
-CMD ["python", "app.py", "runserver", "0.0.0.0:5000"]
+CMD ["python", "app.py"]
