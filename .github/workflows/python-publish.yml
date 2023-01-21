@@ -63,10 +63,10 @@ jobs:
   
       - name: Get current date # get the date of the build
         id: date
-        run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+        run: echo "name=date::$(date +'%Y-%m-%d--%M-%S')" >> $GITHUB_OUTPUT
 
       - name: Build the Docker image # push The image to the docker hub
-        run: docker build . --file Dockerfile --tag $DOCKER_USER/$REPO_NAME:$NOW
+        run: docker build . --file Dockerfile --tag $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
 
       - name: Docker Push
-        run: docker push $DOCKER_USER/$REPO_NAME:$NOW
+        run: docker push $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
