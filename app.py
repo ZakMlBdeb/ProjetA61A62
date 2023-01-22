@@ -9,8 +9,8 @@ from flask import Flask , render_template  , request , send_file
 from keras.utils import load_img , img_to_array
 
 app = Flask(__name__)
-model_location='https://drive.google.com/file/d/1XXcmVxMWEkAEUHvy-MUYwniffJG_bMNY/view?usp=sharing'
-model = keras.models.load_model(model_location)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model = keras.models.load_model(os.path.join(BASE_DIR, 'model_alzheimer01.h5'))
 
 
 EXTENSIONS_AUTORISEES = set(['jpg' , 'jpeg' , 'png' , 'jfif'])
