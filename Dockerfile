@@ -1,17 +1,11 @@
 FROM python:3.9
 
-ENV VIRTUAL_ENV=/opt/env
-
-RUN python3 -m venv $VIRTUAL_ENV
-
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-
 RUN pip install --upgrade pip
 
-COPY  requirements.txt .
-
-RUN pip install --no-cache-dir -r requirements.txt
+WORKDIR /app
 
 COPY  . .
+
+RUN pip install --no-cache-dir -r requirements.txt
 
 CMD ["python", "app.py"]
