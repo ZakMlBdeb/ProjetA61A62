@@ -9,6 +9,14 @@
 
     <!-- Link to your general styles -->
     <link rel="stylesheet" type="text/css" href="../static/css/column-styles.css" />
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>    
+    <script>
+	  $(document).ready(function(){
+         
+          $("#Port").text(window.document.location.port)
+          $("#Port").css('color',  "blue");
+        });
+        </script>
 </head>
 <body class="main-content">
 <r-c>
